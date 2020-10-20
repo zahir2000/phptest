@@ -32,10 +32,16 @@
                 $encrypt = encrypt($textToEncrypt);
                 echo "Original Text is <b class='text-success'>$textToEncrypt</b><br/>";
                 echo "Encrypted value is <b class='text-info'>$encrypt</b><br/><br/>";
-                
+
                 $decrypt = decrypt($encrypt);
                 echo "Decrypting <b class='text-info'>$encrypt</b> now...<br/>";
                 echo "Decrypted value is <b class='text-success'>$decrypt</b><br/><br/>";
+
+                if ($decrypt == $textToEncrypt) {
+                    ?> 
+                    <img src="https://media1.tenor.com/images/28cc23cee9aaeb2427a7d2be60f60b8b/tenor.gif?itemid=8843762" width="150" class="pt-5" />
+                    <?php
+                }
             } else {
                 echo "<b class='text-danger'>Please enter a text.</b>";
             }
@@ -64,6 +70,7 @@
             $str = pack('C*', ...$xors);
             return $str;
         }
+
         include_once 'Footer.php';
         ?>
     </body>

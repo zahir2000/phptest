@@ -49,6 +49,9 @@
 
             if (is_numeric($loanAmt) && is_numeric($monthlyRepayment) && is_numeric($loanTerm)) {
                 $interestRate = calculateInterestRate($loanAmt, $monthlyRepayment, $loanTerm);
+                echo "Loan Amount: RM$loanAmt<br/>";
+                echo "Monthly Payment: RM$monthlyRepayment<br/>";
+                echo "Loan Term: $loanTerm years<br/><br/>";
                 echo "<b>Interest Offer to look for</b> is <b>" . round($interestRate, 2) . "%</b>";
             } else {
                 echo "<div class='text-danger'>Please enter all required input fields.</div>";
